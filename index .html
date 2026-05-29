@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ineza Kelia & Iradukunda Marie Noella | Student Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #5b6473;
+      --paper: #f8fafc;
+      --white: #ffffff;
+      --line: #dbe3ee;
+      --teal: #0f766e;
+      --coral: #e85d4f;
+      --gold: #d99b24;
+      --navy: #172554;
+      --shadow: 0 20px 50px rgba(17, 24, 39, 0.12);
+      --radius: 8px;
+    }
+
+    body.dark-mode {
+      --ink: #eef2ff;
+      --muted: #cbd5e1;
+      --paper: #0f172a;
+      --white: #172033;
+      --line: #334155;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px clamp(18px, 4vw, 64px);
+      background: rgba(248, 250, 252, 0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      color: var(--white);
+      background: var(--ink);
+      border-radius: var(--radius);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .icon-button {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      color: var(--ink);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .icon-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      min-height: calc(100vh - 67px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(310px, 0.9fr);
+      align-items: center;
+      gap: clamp(28px, 5vw, 70px);
+      padding: clamp(44px, 7vw, 92px) clamp(18px, 5vw, 78px);
+      background:
+        linear-gradient(120deg, rgba(15, 118, 110, 0.12), rgba(232, 93, 79, 0.09)),
+        var(--paper);
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.08;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-top: 14px;
+      font-size: clamp(2.6rem, 7vw, 6rem);
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.22rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 12px 18px;
+      border: 1px solid var(--ink);
+      border-radius: var(--radius);
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .button.primary {
+      color: var(--white);
+      background: var(--ink);
+      box-shadow: 0 14px 30px rgba(17, 24, 39, 0.18);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: 20px;
+      color: var(--white);
+      background: #14213d;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .screen {
+      min-height: 430px;
+      padding: 20px;
+      background: #0b1220;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+
+    .window-dots span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+
+    .window-dots span:nth-child(2) {
+      background: var(--gold);
+    }
+
+    .window-dots span:nth-child(3) {
+      background: #26c281;
+    }
+
+    .code-line {
+      display: flex;
+      gap: 14px;
+      margin: 13px 0;
+      color: #d6e4ff;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.95rem;
+    }
+
+    .code-line strong {
+      color: #67e8f9;
+      font-weight: 700;
+    }
+
+    .code-line em {
+      color: #fbbf24;
+      font-style: normal;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .stat {
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.4rem;
+    }
+
+    .stat span {
+      color: #b6c5dc;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    section {
+      padding: clamp(54px, 8vw, 96px) clamp(18px, 5vw, 78px);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: 1160px;
+      margin: 0 auto 28px;
+    }
+
+    .section-head h2 {
+      margin-top: 8px;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .section-head p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .profiles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .profile-tools,
+    .filter-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 1160px;
+      margin: 0 auto 18px;
+    }
+
+    .tool-button {
+      min-height: 40px;
+      padding: 9px 13px;
+      color: var(--ink);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .tool-button.active {
+      color: var(--white);
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+
+    .profile-card.hidden,
+    .project-card.hidden {
+      display: none;
+    }
+
+    .profile-card,
+    .project-card,
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 34px rgba(17, 24, 39, 0.07);
+    }
+
+    .profile-card {
+      overflow: hidden;
+    }
+
+    .profile-top {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 22px;
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.14), rgba(217, 155, 36, 0.12));
+    }
+
+    .avatar {
+      display: grid;
+      place-items: center;
+      width: 112px;
+      aspect-ratio: 1;
+      color: var(--white);
+      background: var(--navy);
+      border: 4px solid rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    .profile-top h3 {
+      font-size: clamp(1.45rem, 3vw, 2rem);
+    }
+
+    .profile-top p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .profile-body {
+      padding: 22px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      color: #164e63;
+      background: #ecfeff;
+      border: 1px solid #bae6fd;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .skills-band {
+      background: #111827;
+      color: var(--white);
+    }
+
+    .skills-band .section-head p,
+    .skills-band .eyebrow {
+      color: #a7f3d0;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .skill {
+      min-height: 158px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: var(--radius);
+    }
+
+    .skill svg {
+      width: 30px;
+      height: 30px;
+      color: #5eead4;
+    }
+
+    .skill h3 {
+      margin-top: 14px;
+      font-size: 1.05rem;
+    }
+
+    .skill p {
+      margin: 9px 0 0;
+      color: #cbd5e1;
+      font-size: 0.92rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      min-height: 240px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--teal);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .project-action {
+      align-self: flex-start;
+      margin-top: 18px;
+      padding: 8px 11px;
+      color: var(--white);
+      background: var(--ink);
+      border: 0;
+      border-radius: var(--radius);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .project-card.featured {
+      border-color: var(--gold);
+      box-shadow: 0 18px 42px rgba(217, 155, 36, 0.2);
+    }
+
+    .timeline {
+      max-width: 900px;
+      margin: 0 auto;
+      border-left: 3px solid var(--teal);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 28px 26px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 4px;
+      width: 17px;
+      height: 17px;
+      background: var(--coral);
+      border: 4px solid var(--paper);
+      border-radius: 50%;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.2rem;
+    }
+
+    .timeline-item p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      background: linear-gradient(135deg, #0f766e, #172554);
+      color: var(--white);
+    }
+
+    .contact .section-head p,
+    .contact .eyebrow {
+      color: #d1fae5;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      padding: 20px;
+      color: var(--ink);
+    }
+
+    .contact-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-top: 6px;
+      overflow-wrap: anywhere;
+      font-size: 1.08rem;
+    }
+
+    .message-lab {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      max-width: 1160px;
+      margin: 16px auto 0;
+    }
+
+    .message-form,
+    .message-preview {
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--ink);
+    }
+
+    .message-form label {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .message-form input,
+    .message-form select,
+    .message-form textarea {
+      width: 100%;
+      margin-top: 6px;
+      padding: 11px 12px;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      font: inherit;
+    }
+
+    .message-form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .message-preview h3 {
+      font-size: 1.2rem;
+    }
+
+    .message-preview p {
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 22px;
+      color: var(--muted);
+      text-align: center;
+      background: var(--white);
+      border-top: 1px solid var(--line);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .profiles,
+      .projects,
+      .contact-grid,
+      .message-lab {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .profile-top {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-grid,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .screen {
+        min-height: 360px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#home" aria-label="Portfolio home">
+      <span class="brand-mark">IK</span>
+      <span>Kelia & Noella</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+      <a href="#find-us">Find Us</a>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 7.4A9 9 0 1 1 12 3Z"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero" id="home">
+      <div>
+        <span class="eyebrow">L3SWD Software Development Students</span>
+        <h1>Ineza Kelia & Iradukunda Marie Noella</h1>
+        <p>
+          A modern student portfolio for two creative learners from IDBK TSS, building practical software skills through clean design,
+          teamwork, problem solving, and web development.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#projects">View Projects</a>
+          <a class="button" href="#contact">Get In Touch</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Portfolio highlights">
+        <div class="screen">
+          <div class="window-dots" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="code-line"><strong>const</strong> students = [</div>
+          <div class="code-line">&nbsp;&nbsp;{ name: <em>"Ineza Kelia"</em>, track: <em>"L3SWD"</em> },</div>
+          <div class="code-line">&nbsp;&nbsp;{ name: <em>"Iradukunda Marie Noella"</em>, track: <em>"L3SWD"</em> }</div>
+          <div class="code-line">];</div>
+          <div class="code-line"><strong>mission</strong>.build("useful digital solutions");</div>
+          <div class="stat-grid">
+            <div class="stat">
+              <b>2</b>
+              <span>Student Developers</span>
+            </div>
+            <div class="stat">
+              <b>L3</b>
+              <span>Software Dev</span>
+            </div>
+            <div class="stat">
+              <b>IDBK</b>
+              <span>TSS Community</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </header>
+
+    <section id="about">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">About Us</span>
+          <h2>Two learners, one software path.</h2>
+        </div>
+        <p>
+          Kelia and Noella are developing the foundations needed to design, code, test, and present reliable software projects.
+        </p>
+      </div>
+
+      <div class="profile-tools reveal" aria-label="Choose profile to view">
+        <button class="tool-button active" type="button" data-profile-filter="all">Both Students</button>
+        <button class="tool-button" type="button" data-profile-filter="kelia">Kelia</button>
+        <button class="tool-button" type="button" data-profile-filter="noella">Noella</button>
+      </div>
+
+      <div class="profiles">
+        <article class="profile-card reveal" data-profile="kelia">
+          <div class="profile-top">
+            <div class="avatar">IK</div>
+            <div>
+              <h3>Ineza Kelia</h3>
+              <p>L3SWD student at IDBK TSS</p>
+            </div>
+          </div>
+          <div class="profile-body">
+            <p>
+              Kelia enjoys turning ideas into neat digital interfaces. She focuses on clear structure, responsive layouts,
+              and learning how software can solve everyday school and community needs.
+            </p>
+            <div class="tags">
+              <span class="tag">Frontend Design</span>
+              <span class="tag">HTML & CSS</span>
+              <span class="tag">Teamwork</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="profile-card reveal" data-profile="noella">
+          <div class="profile-top">
+            <div class="avatar">MN</div>
+            <div>
+              <h3>Iradukunda Marie Noella</h3>
+              <p>L3SWD student at IDBK TSS</p>
+            </div>
+          </div>
+          <div class="profile-body">
+            <p>
+              Noella is interested in practical programming, user-friendly pages, and building confidence through projects.
+              She brings careful thinking, communication, and curiosity to each development task.
+            </p>
+            <div class="tags">
+              <span class="tag">Web Pages</span>
+              <span class="tag">Problem Solving</span>
+              <span class="tag">Presentation</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="skills-band" id="skills">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Modern Skills</span>
+          <h2>Growing into capable software developers.</h2>
+        </div>
+        <p>Current strengths and learning goals connected to the L3SWD software development track.</p>
+      </div>
+
+      <div class="skill-grid">
+        <article class="skill reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+          <h3>Web Development</h3>
+          <p>Building structured pages with HTML, CSS, and JavaScript basics.</p>
+        </article>
+        <article class="skill reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6M7 16h8"/></svg>
+          <h3>UI Planning</h3>
+          <p>Designing readable layouts, simple navigation, and clear content sections.</p>
+        </article>
+        <article class="skill reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M7 16h10"/></svg>
+          <h3>Logic & Debugging</h3>
+          <p>Breaking problems into steps and improving code through testing.</p>
+        </article>
+        <article class="skill reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h3>Collaboration</h3>
+          <p>Sharing tasks, giving feedback, and presenting work with confidence.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Project Ideas</span>
+          <h2>Portfolio-ready work.</h2>
+        </div>
+        <p>These concepts show the kind of practical school projects Kelia and Noella can build and improve.</p>
+      </div>
+
+      <div class="filter-tools reveal" aria-label="Filter projects">
+        <button class="tool-button active" type="button" data-project-filter="all">All</button>
+        <button class="tool-button" type="button" data-project-filter="web">Web</button>
+        <button class="tool-button" type="button" data-project-filter="dashboard">Dashboard</button>
+        <button class="tool-button" type="button" data-project-filter="system">System</button>
+      </div>
+
+      <div class="projects">
+        <article class="project-card reveal" data-category="dashboard web">
+          <div>
+            <h3>Student Result Dashboard</h3>
+            <p>A clean dashboard for viewing subjects, marks, progress, and study priorities.</p>
+          </div>
+          <div>
+            <div class="project-meta"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <button class="project-action" type="button">Highlight</button>
+          </div>
+        </article>
+        <article class="project-card reveal" data-category="web">
+          <div>
+            <h3>School Club Website</h3>
+            <p>A responsive website for announcements, members, events, and club achievements.</p>
+          </div>
+          <div>
+            <div class="project-meta"><span>Responsive Design</span><span>Content</span></div>
+            <button class="project-action" type="button">Highlight</button>
+          </div>
+        </article>
+        <article class="project-card reveal" data-category="system">
+          <div>
+            <h3>Mini Library System</h3>
+            <p>A beginner-friendly system concept for listing books, borrowers, and return dates.</p>
+          </div>
+          <div>
+            <div class="project-meta"><span>Forms</span><span>Data</span><span>Logic</span></div>
+            <button class="project-action" type="button">Highlight</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Learning Journey</span>
+          <h2>From basics to real projects.</h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <h3>Foundation</h3>
+          <p>Learning computer basics, file organization, web structure, and software development vocabulary.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <h3>Practice</h3>
+          <p>Creating pages, styling layouts, working with forms, and improving user experience.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <h3>Portfolio Growth</h3>
+          <p>Documenting skills, presenting projects, and preparing for more advanced software development work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>Ready to learn, build, and collaborate.</h2>
+        </div>
+        <p>Use this section for school project contacts, social links, or email addresses when available.</p>
+      </div>
+
+      <div class="contact-grid">
+        <article class="contact-card reveal">
+          <span>School</span>
+          <strong>IDBK TSS</strong>
+        </article>
+        <article class="contact-card reveal">
+          <span>Class</span>
+          <strong>L3SWD - Software Development</strong>
+        </article>
+        <article class="contact-card reveal">
+          <span>Focus</span>
+          <strong>Modern web and software projects</strong>
+        </article>
+      </div>
+
+      <div class="section-head reveal" id="find-us" style="margin-top: 42px;">
+        <div>
+          <span class="eyebrow">Find Us</span>
+          <h2>Reach the students directly.</h2>
+        </div>
+        <p>Use these details for school projects, collaboration, and portfolio communication.</p>
+      </div>
+
+      <div class="contact-grid">
+        <article class="contact-card reveal">
+          <span>Email</span>
+          <strong><a href="mailto:imarienoella473@gmail.com">imarienoella473@gmail.com</a></strong>
+        </article>
+        <article class="contact-card reveal">
+          <span>Phone</span>
+          <strong><a href="tel:+250786280220">0786280220</a></strong>
+        </article>
+        <article class="contact-card reveal">
+          <span>Location</span>
+          <strong>IDBK TSS - L3SWD</strong>
+        </article>
+      </div>
+
+      <div class="message-lab reveal">
+        <form class="message-form" id="messageForm">
+          <label>
+            Your name
+            <input id="visitorName" type="text" placeholder="Type your name">
+          </label>
+          <label>
+            Send to
+            <select id="studentChoice">
+              <option value="Kelia and Noella">Kelia and Noella</option>
+              <option value="Ineza Kelia">Ineza Kelia</option>
+              <option value="Iradukunda Marie Noella">Iradukunda Marie Noella</option>
+            </select>
+          </label>
+          <label>
+            Message
+            <textarea id="visitorMessage" placeholder="Write a short project message"></textarea>
+          </label>
+          <button class="button primary" type="submit">Preview Message</button>
+        </form>
+        <article class="message-preview" aria-live="polite">
+          <span class="eyebrow">Live Preview</span>
+          <h3 id="previewTitle">Message for Kelia and Noella</h3>
+          <p id="previewBody">Start typing to preview a project message here.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Ineza Kelia & Iradukunda Marie Noella. Student Portfolio.</p>
+  </footer>
+
+  <script>
+    const themeToggle = document.querySelector("#themeToggle");
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+
+    document.querySelectorAll("[data-profile-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll("[data-profile-filter]").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.profileFilter;
+        document.querySelectorAll("[data-profile]").forEach((card) => {
+          card.classList.toggle("hidden", filter !== "all" && card.dataset.profile !== filter);
+        });
+      });
+    });
+
+    document.querySelectorAll("[data-project-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll("[data-project-filter]").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.projectFilter;
+        document.querySelectorAll("[data-category]").forEach((card) => {
+          card.classList.toggle("hidden", filter !== "all" && !card.dataset.category.includes(filter));
+        });
+      });
+    });
+
+    document.querySelectorAll(".project-action").forEach((button) => {
+      button.addEventListener("click", () => {
+        const card = button.closest(".project-card");
+        card.classList.toggle("featured");
+        button.textContent = card.classList.contains("featured") ? "Highlighted" : "Highlight";
+      });
+    });
+
+    const form = document.querySelector("#messageForm");
+    const visitorName = document.querySelector("#visitorName");
+    const studentChoice = document.querySelector("#studentChoice");
+    const visitorMessage = document.querySelector("#visitorMessage");
+    const previewTitle = document.querySelector("#previewTitle");
+    const previewBody = document.querySelector("#previewBody");
+
+    function updatePreview() {
+      const name = visitorName.value.trim() || "A visitor";
+      const message = visitorMessage.value.trim() || "Start typing to preview a project message here.";
+      previewTitle.textContent = `Message for ${studentChoice.value}`;
+      previewBody.textContent = `${name}: ${message}`;
+    }
+
+    [visitorName, studentChoice, visitorMessage].forEach((field) => {
+      field.addEventListener("input", updatePreview);
+      field.addEventListener("change", updatePreview);
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      updatePreview();
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
